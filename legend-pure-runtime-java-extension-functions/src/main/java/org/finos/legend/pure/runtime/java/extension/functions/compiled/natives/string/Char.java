@@ -20,6 +20,6 @@ public class Char extends AbstractNativeFunctionGeneric
 {
     public Char()
     {
-        super("FunctionsGen.character", new Class[]{Integer.class}, "char_Integer_1__String_1_");
+        super("FunctionsGen.character", new Class[]{Number.class}, "char_Integer_1__String_1_");
     }
 }

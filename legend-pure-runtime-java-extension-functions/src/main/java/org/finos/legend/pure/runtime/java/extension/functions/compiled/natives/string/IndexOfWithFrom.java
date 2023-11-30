@@ -12,10 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-native function meta::pure::functions::string::levenshteinDistance(str1:String[1], str2:String[1]):Integer[1];
+package org.finos.legend.pure.runtime.java.extension.functions.compiled.natives.string;
 
-function <<test.Test>> meta::pure::functions::string::tests::trim::testLevenshteinDistance():Boolean[1]
+import org.finos.legend.pure.runtime.java.compiled.generation.processors.natives.AbstractNativeFunctionGeneric;
+import org.finos.legend.pure.runtime.java.compiled.generation.processors.support.CompiledSupport;
+
+public class IndexOfWithFrom extends AbstractNativeFunctionGeneric
 {
-    assertEquals(3, levenshteinDistance('John Smith', 'Jane Smith'));
-    assertEquals(0, levenshteinDistance('John Smith', 'John Smith'));
+    public IndexOfWithFrom()
+    {
+        super(getMethod(CompiledSupport.class, "indexOf", String.class, String.class, Number.class), "indexOf_String_1__String_1__Integer_1__Integer_1_");
+    }
 }
